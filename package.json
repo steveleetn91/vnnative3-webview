@@ -1,0 +1,24 @@
+{
+  "name": "vnnative3-webview",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/steveleetn91/vnnative3-webview.git"
+  },
+  "keywords": [
+    "Vn",
+    "Native",
+    "Framework"
+  ],
+  "author": "Steve lee",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/steveleetn91/vnnative3-webview/issues"
+  },
+  "homepage": "https://github.com/steveleetn91/vnnative3-webview#readme"
+}
