@@ -1,9 +1,11 @@
 {
   "name": "vnnative3-webview",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
+    "prepublish": "npm install && npm run build",
     "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
