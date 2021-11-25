@@ -1,19 +1,22 @@
 import { VnNative3HTMLElementInterFace } from "./interface";
-
+import * as Mustache from "mustache"
 export default class VnNative3HTMLElement implements VnNative3HTMLElementInterFace {
     add(root_id : string,html : string,data : any) : void{
-        var Mustache = require('mustache');
-        document.getElementById(root_id).innerHTML += Mustache.render(html, data);
+        let screen : any;
+        screen = document.getElementById(root_id);
+        screen += Mustache.render(html, data);
     }
     update(root_id : string,html : string,data : any) : void{
-        var Mustache = require('mustache');
-        document.getElementById(root_id).innerHTML = Mustache.render(html, data);
+        let screen : any;
+        screen = document.getElementById(root_id);
+        screen = Mustache.render(html, data);
     }
     remove(root_id : string) : void {
-        document.getElementById(root_id).innerHTML = "";
+        let screen : any;
+        screen = document.getElementById(root_id);
+        screen = ""; 
     }
     make(html : string,data : any) : string {
-        var Mustache = require('mustache');
         return Mustache.render(html, data);
     }
 }
