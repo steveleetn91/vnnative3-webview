@@ -1,7 +1,6 @@
 import { VnNative3HTMLElementInterFace } from "./interface";
 export default class VnNative3HTMLElement implements VnNative3HTMLElementInterFace {
     add(root_id: string, html: string, data: any): void;
-    update(root_id: string, html: string, data: any): void;
     remove(root_id: string): void;
     make(html: string, data: any): string;
 }

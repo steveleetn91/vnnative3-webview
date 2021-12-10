@@ -7,17 +7,12 @@ var VnNative3HTMLElement = /** @class */ (function () {
     VnNative3HTMLElement.prototype.add = function (root_id, html, data) {
         var screen;
         screen = document.getElementById(root_id);
-        screen += Mustache.render(html, data);
-    };
-    VnNative3HTMLElement.prototype.update = function (root_id, html, data) {
-        var screen;
-        screen = document.getElementById(root_id);
-        screen = Mustache.render(html, data);
+        screen.innerHTML += Mustache.render(html, data);
     };
     VnNative3HTMLElement.prototype.remove = function (root_id) {
-        var screen;
-        screen = document.getElementById(root_id);
-        screen = "";
+        var ele;
+        ele = document.getElementById(root_id);
+        ele.remove();
     };
     VnNative3HTMLElement.prototype.make = function (html, data) {
         return Mustache.render(html, data);
