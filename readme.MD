@@ -16,7 +16,10 @@ To use it us need
 
 ### Add example 
 
-    `(new VnNative3HTMLElement).add(element_id,`<span>{{test}}</span>`,{
+    `(new VnNative3HTMLElement).head({
+        title: "Site name",
+        slogan: "Slogan site"
+    }).add(element_id,`<span>{{test}}</span>`,{
         test : "hello world"
     })`
 
