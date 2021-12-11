@@ -16,7 +16,7 @@ To use it us need
 
 ### Add example 
 
-    `(new VnNative3HTMLElement).add(element_id,'<span>{{test}}</span>',{
+    `(new VnNative3HTMLElement).add(element_id,`<span>{{test}}</span>`,{
         test : "hello world"
     })`
 
@@ -24,13 +24,13 @@ Or
 
     `(new VnNative3HTMLElement).next(() => {
         console.log("Do a something.");
-    }).add(element_id,'<span>{{test}}</span>',{
+    }).add(element_id,`<span>{{test}}</span>`,{
         test : "hello world"
     })`
 
 Or
 
-    `(new VnNative3HTMLElement).add(element_id,'<span>{{test}}</span>',{
+    (new VnNative3HTMLElement).add(element_id,`<span>{{test}}</span>`,{
         test : "hello world"
     }).next(() => {
         console.log("Do a something.");
@@ -38,13 +38,27 @@ Or
         console.log("Do a something.");
     }).next(() => {
         console.log("Do a something.");
-    }).add(element_id,'<span>{{test}}</span>',{
+    }).add(element_id,`<span>{{test}}</span>`,{
         test : "hello world"
-    })`
+    })
+
+### Make example 
+
+    let makeExample = (new VnNative3HTMLElement).make(`<span>{{test}}</span>`,{
+        test : "hello world"
+    });
+
+Or
+
+    let makeExample = (new VnNative3HTMLElement).next(() => {
+        console.log("Do a something.");
+    }).make(`<span>{{test}}</span>`,{
+        test : "hello world"
+    });
 
 ### Remove example 
 
-    `(new VnNative3HTMLElement).remove(element_id)`
+    (new VnNative3HTMLElement).remove(element_id)
 
 # Licence
 
