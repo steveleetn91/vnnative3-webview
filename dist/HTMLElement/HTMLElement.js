@@ -35,6 +35,14 @@ var VnNative3HTMLElement = /** @class */ (function () {
         document.body.appendChild(script);
         return new VnNative3HTMLElement;
     };
+    VnNative3HTMLElement.prototype.addScriptModule = function (url) {
+        var script;
+        script = document.createElement("script");
+        script.setAttribute("src", url);
+        script.setAttribute("type", "module");
+        document.body.appendChild(script);
+        return new VnNative3HTMLElement;
+    };
     return VnNative3HTMLElement;
 }());
 exports.default = VnNative3HTMLElement;
