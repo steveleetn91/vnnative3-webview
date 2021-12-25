@@ -32,4 +32,12 @@ export default class VnNative3HTMLElement implements VnNative3HTMLElementInterFa
         document.body.appendChild(script);
         return new VnNative3HTMLElement;
     }
+    addScriptModule(url : string) : VnNative3HTMLElementInterFace {
+        let script : any;
+        script = document.createElement("script");
+        script.setAttribute("src",url);
+        script.setAttribute("type","module");
+        document.body.appendChild(script);
+        return new VnNative3HTMLElement;
+    }
 }

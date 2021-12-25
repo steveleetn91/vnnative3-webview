@@ -5,4 +5,5 @@ export interface VnNative3HTMLElementInterFace {
     make(html:string,data: any) : string
     next(callback : any) : VnNative3HTMLElementInterFace
     addScript(url : string) : VnNative3HTMLElementInterFace
+    addScriptModule(url : string) : VnNative3HTMLElementInterFace
 }
