@@ -2,15 +2,21 @@ import { VnNative3HTMLElementInterFace } from "./interface";
 import * as Mustache from "mustache"
 export default class VnNative3HTMLElement implements VnNative3HTMLElementInterFace {
     add(root_id : string,html : string,data : any) : VnNative3HTMLElementInterFace{
-        let screen : any;
+        let screen : HTMLElement | null;
         screen = document.getElementById(root_id);
-        screen.innerHTML += Mustache.render(html, data);
+        screen!.innerHTML += Mustache.render(html, data);
+        return new VnNative3HTMLElement;
+    }
+    empty(root_id : string) : VnNative3HTMLElementInterFace{
+        let screen : HTMLElement | null;
+        screen = document.getElementById(root_id);
+        screen!.innerHTML = "";
         return new VnNative3HTMLElement;
     }
     remove(root_id : string) : VnNative3HTMLElementInterFace {
-        let ele : any;
+        let ele : HTMLElement | null;
         ele = document.getElementById(root_id);
-        ele.remove();
+        ele?.remove();
         return new VnNative3HTMLElement;
     }
     head(set: any): VnNative3HTMLElementInterFace {
@@ -26,14 +32,14 @@ export default class VnNative3HTMLElement implements VnNative3HTMLElementInterFa
         return new VnNative3HTMLElement;
     }
     addScript(url : string) : VnNative3HTMLElementInterFace {
-        let script : any;
+        let script : HTMLScriptElement;
         script = document.createElement("script");
         script.setAttribute("src",url);
         document.body.appendChild(script);
         return new VnNative3HTMLElement;
     }
     addScriptModule(url : string) : VnNative3HTMLElementInterFace {
-        let script : any;
+        let script : HTMLScriptElement;
         script = document.createElement("script");
         script.setAttribute("src",url);
         script.setAttribute("type","module");

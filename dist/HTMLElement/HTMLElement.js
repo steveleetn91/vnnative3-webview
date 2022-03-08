@@ -10,10 +10,16 @@ var VnNative3HTMLElement = /** @class */ (function () {
         screen.innerHTML += Mustache.render(html, data);
         return new VnNative3HTMLElement;
     };
+    VnNative3HTMLElement.prototype.empty = function (root_id) {
+        var screen;
+        screen = document.getElementById(root_id);
+        screen.innerHTML = "";
+        return new VnNative3HTMLElement;
+    };
     VnNative3HTMLElement.prototype.remove = function (root_id) {
         var ele;
         ele = document.getElementById(root_id);
-        ele.remove();
+        ele === null || ele === void 0 ? void 0 : ele.remove();
         return new VnNative3HTMLElement;
     };
     VnNative3HTMLElement.prototype.head = function (set) {
