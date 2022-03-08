@@ -14,12 +14,21 @@ To use it us need
 
 # Feature 
 
-### Add example 
+### Empty example 
+If you wanna empty all of any element, so we can use: 
 
-    `(new VnNative3HTMLElement).head({
-        title: "Site name",
-        slogan: "Slogan site"
-    }).add(element_id,`<span>{{test}}</span>`,{
+    (new VnNative3HTMLElement).empty(element_id)
+
+Or 
+
+    (new VnNative3HTMLElement).empty(element_id).add(element_id,`<span>{{test}}</span>`,{
+        test : "hello world"
+    })
+    
+### Add example 
+You can use it after render view
+
+    `(new VnNative3HTMLElement).add(element_id,`<span>{{test}}</span>`,{
         test : "hello world"
     })`
 
@@ -62,6 +71,7 @@ Or
 ### Remove example 
 
     (new VnNative3HTMLElement).remove(element_id)
+    
 
 # Licence
 
