@@ -8,4 +8,5 @@ export default class VnNative3HTMLElement implements VnNative3HTMLElementInterFa
     next(callback: any): VnNative3HTMLElementInterFace;
     addScript(url: string): VnNative3HTMLElementInterFace;
     addScriptModule(url: string): VnNative3HTMLElementInterFace;
+    supportMoveScreen(): VnNative3HTMLElementInterFace;
 }

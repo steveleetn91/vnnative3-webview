@@ -1,6 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var Mustache = require("mustache");
+var index_1 = require("vnnative3-location/dist/index");
 var VnNative3HTMLElement = /** @class */ (function () {
     function VnNative3HTMLElement() {
     }
@@ -47,6 +48,19 @@ var VnNative3HTMLElement = /** @class */ (function () {
         script.setAttribute("src", url);
         script.setAttribute("type", "module");
         document.body.appendChild(script);
+        return new VnNative3HTMLElement;
+    };
+    VnNative3HTMLElement.prototype.supportMoveScreen = function () {
+        var links = document.querySelectorAll("#root a");
+        links.forEach(function (link) {
+            link.addEventListener("click", function (ev) {
+                var routerLink = link.getAttribute("link");
+                var go = routerLink != null ? routerLink : "";
+                if (go !== "") {
+                    (new index_1.default).redirect.go(go, []);
+                }
+            });
+        });
         return new VnNative3HTMLElement;
     };
     return VnNative3HTMLElement;

@@ -1,10 +1,12 @@
 import { VnNative3HTMLElementInterFace } from "./interface";
 import * as Mustache from "mustache"
+import Vnnative3Location from "vnnative3-location/dist/index"
 export default class VnNative3HTMLElement implements VnNative3HTMLElementInterFace {
     add(root_id : string,html : string,data : any) : VnNative3HTMLElementInterFace{
         let screen : HTMLElement | null;
         screen = document.getElementById(root_id);
         screen!.innerHTML += Mustache.render(html, data);
+        this.supportMoveScreen();
         return new VnNative3HTMLElement;
     }
     empty(root_id : string) : VnNative3HTMLElementInterFace{
@@ -44,6 +46,19 @@ export default class VnNative3HTMLElement implements VnNative3HTMLElementInterFa
         script.setAttribute("src",url);
         script.setAttribute("type","module");
         document.body.appendChild(script);
+        return new VnNative3HTMLElement;
+    }
+    supportMoveScreen(): VnNative3HTMLElementInterFace {
+        let links : NodeListOf<Element> = document.querySelectorAll("#root a");
+        links.forEach((link : Element) => {
+            link.addEventListener("click",(ev : Event) => {
+                let routerLink : string | null = link.getAttribute("link");
+                let go : string = routerLink != null ? routerLink : "";
+                if(go !== "" ) {
+                    (new Vnnative3Location).redirect.go(go,[]);
+                }
+            })
+        })
         return new VnNative3HTMLElement;
     }
 }
