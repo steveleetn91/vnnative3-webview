@@ -9,6 +9,7 @@ var VnNative3HTMLElement = /** @class */ (function () {
         var screen;
         screen = document.getElementById(root_id);
         screen.innerHTML += Mustache.render(html, data);
+        this.supportMoveScreen();
         return new VnNative3HTMLElement;
     };
     VnNative3HTMLElement.prototype.empty = function (root_id) {
