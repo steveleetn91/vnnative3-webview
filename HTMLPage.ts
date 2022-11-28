@@ -1,5 +1,5 @@
 export default interface HTMLPageInterFace {
-    render() : string 
+    render() : string | void 
     beforeRender() : void
     afterRender() : void
 }
